@@ -1,0 +1,41 @@
+:root {
+    --primary-color: #FABC2A;
+    --secondary-color: #7c7c7c44;
+    --background-color: #FAFAFF;
+    --text-color: #1C1C1C;
+}
+
+.index
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+h1 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: xx-large;
+    font-weight: bolder;
+    color: var(--text-color);
+    margin: 20px;
+}
+
+@font-face {
+    font-family: 'Blackbird';
+    src: url('../assets/Projekt\ Blackbird.otf') format('opentype');
+  }
+
+body,html {
+    font-family: Blackbird , Helvetica, Arial;
+    color: var(--text-color); 
+    background-color: var(--background-color);
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    position: relative;
+
+}
