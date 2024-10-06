@@ -1,7 +1,5 @@
 // Define a color palette (use any colors you like)
 
-const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
 const lightModePalette = [
   'rgba(255, 99, 132, 0.5)',
   'rgba(54, 162, 235, 0.5)',
@@ -18,7 +16,13 @@ const darkModePalette = [
   'rgb(52, 98, 63)'
 ];
 
-const colorPalette = isDarkMode ? darkModePalette : lightModePalette;
+let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+let colorPalette = isDarkMode ? darkModePalette : lightModePalette;
+
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+  isDarkMode = event.matches;
+  colorPalette = isDarkMode ? darkModePalette : lightModePalette;
+});
 
 function getRandomColor() {
   // Randomly select a color from the colorPalette array
