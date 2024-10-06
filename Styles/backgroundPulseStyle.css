@@ -2,7 +2,16 @@
 :root {
   --pulse-size: 20vw;
   --pulse-scale: 5; /* Scale factor for the animation */
-  --pulse-duration: 25s; /* Duration of pulse animation */
+  --pulse-duration: 20s; /* Duration of pulse animation */
+}
+
+#pulse-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none; /* Ensure the container doesn't interfere with other interactions */
 }
 
 .pulse {
@@ -13,6 +22,8 @@
   background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
   animation: pulse var(--pulse-duration) infinite ease-in-out; /* Using variable for duration */
   pointer-events: none;
+  opacity: 0.5;
+  z-index: 0;
 }
 
 @keyframes pulse {
@@ -21,10 +32,30 @@
       opacity: 0;
   }
   65% {
-      opacity: 0.75;
+      opacity: 0.5;
   }
   100% {
       transform: scale(var(--pulse-scale)); /* Using variable for scale */
       opacity: 0;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .pulse {
+      background: radial-gradient(circle, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+  }
+
+  @keyframes pulse {
+      0% {
+          transform: scale(0);
+          opacity: 0;
+      }
+      65% {
+          opacity: 0.25;
+      }
+      100% {
+          transform: scale(var(--pulse-scale)); /* Using variable for scale */
+          opacity: 0;
+      }
   }
 }

@@ -1,12 +1,28 @@
 // Define a color palette (use any colors you like)
-const colorPalette = [
-  'rgba(255, 99, 132, 0.5)',  // Light red
-  'rgba(54, 162, 235, 0.5)',  // Light blue
-  'rgba(75, 192, 192, 0.5)',  // Light teal
-  'rgba(255, 206, 86, 0.5)',  // Light yellow
-  'rgba(153, 102, 255, 0.5)', // Light purple
-  'rgba(255, 159, 64, 0.5)'   // Light orange
+
+const lightModePalette = [
+  'rgba(255, 99, 132, 0.5)',
+  'rgba(54, 162, 235, 0.5)',
+  'rgba(75, 192, 192, 0.5)',
+  'rgba(255, 206, 86, 0.5)', 
+  'rgba(153, 102, 255, 0.5)',
+  'rgba(255, 159, 64, 0.5)'  
 ];
+
+const darkModePalette = [
+  'rgb(176, 156, 77)',
+  'rgb(118, 137, 72)',
+  'rgb(96, 119, 68)',
+  'rgb(52, 98, 63)'
+];
+
+let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+let colorPalette = isDarkMode ? darkModePalette : lightModePalette;
+
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+  isDarkMode = event.matches;
+  colorPalette = isDarkMode ? darkModePalette : lightModePalette;
+});
 
 function getRandomColor() {
   // Randomly select a color from the colorPalette array
@@ -34,7 +50,8 @@ function createPulse() {
   const color = getRandomColor();
   pulse.style.background = `radial-gradient(circle, ${color} 0%, rgba(255, 255, 255, 0) 70%)`;
 
-  document.body.appendChild(pulse);
+  const container = document.getElementById('pulse-container');
+  container.appendChild(pulse);
 
   // Get the pulse duration from CSS variable
   const pulseDuration = parseFloat(getCssVariableValue('--pulse-duration')) * 1000; // Convert to milliseconds
