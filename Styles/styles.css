@@ -17,16 +17,14 @@
 }
 
 h1 {
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: xx-large;
+    font-family: Blackbird, Helvetica, Arial;
+    font-size: clamp(25px, 10vw, 100px);
     font-weight: bolder;
-
 }
 
 h2 {
     font-family: Blackbird, Helvetica, Arial;
-    font-size: x-large;
-    font-weight: bold;
+    font-size: clamp(15px, 5vw, 60px);
 }
 
 @font-face {
@@ -44,11 +42,22 @@ main {
     margin: 32px;
 }
 
-.centered-text {
-    display: grid;
+
+.stacked-text {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height:100%
+    text-align: center;
+}
+
+.centered-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
 }
 
 @media (prefers-color-scheme: dark) {
