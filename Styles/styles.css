@@ -1,8 +1,11 @@
 :root {
     --primary-color: #FABC2A;
     --secondary-color: #7c7c7c44;
-    --background-color: #FAFAFF;
+    --background-color: rgb(231, 227, 219);
+    --dark-background-color: #1b0505;
     --text-color: #1C1C1C;
+    color : var(--text-color);
+    background-color: var(--background-color);
 }
 
 .index
@@ -13,16 +16,18 @@
     justify-content: center;
     height: 100vh;
     width: 100%;
-    background-color: var(--background-color);
-    color: var(--text-color);
 }
 
 h1 {
     font-family: Helvetica, Arial, sans-serif;
     font-size: xx-large;
     font-weight: bolder;
-    color: var(--text-color);
-    margin: 20px;
+}
+
+h2 {
+    font-family: Blackbird, Helvetica, Arial;
+    font-size: x-large;
+    font-weight: bold;
 }
 
 @font-face {
@@ -32,10 +37,20 @@ h1 {
 
 body,html {
     font-family: Blackbird , Helvetica, Arial;
-    color: var(--text-color); 
-    background-color: var(--background-color);
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-    position: relative;
-
+    margin: 20px;
 }
+
+.centered-text {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height:100%
+/* Add any other styles for .parallax */
+}
+
+@media (prefers-color-scheme: dark) {
+    :root{
+        background-color: var(--dark-background-color); /* Dark background for dark mode */
+        color: var(--background-color); /* Light text for dark mode */
+    }
+  }
