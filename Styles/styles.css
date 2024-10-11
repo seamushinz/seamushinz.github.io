@@ -42,6 +42,9 @@ main {
     margin: 32px;
 }
 
+p {
+    font-size: clamp(12px, 3vw, 20px);
+}
 
 .stacked-text {
     display: flex;
@@ -65,4 +68,29 @@ main {
         background-color: var(--dark-background-color); /* Dark background for dark mode */
         color: var(--background-color); /* Light text for dark mode */
     }
-  }
+}
+
+#seamus-model {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 20vw;
+    height: 60vw;
+    max-width: 400px;
+    max-height: 400px;
+    z-index: 1000; /* force to top */
+    opacity: 0;
+    animation: fadeIn 2s forwards; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+    from
+    {
+        opacity: 0;
+        transform: scale(0.5) translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+    }
+}

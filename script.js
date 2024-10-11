@@ -56,7 +56,7 @@ function createPulse() {
   // Get the pulse duration from CSS variable
   const pulseDuration = parseFloat(getCssVariableValue('--pulse-duration')) * 1000; // Convert to milliseconds
 
-  // Remove the pulse after animation (duration retrieved dynamically)
+  // Remove the pulse after the animation duration
   setTimeout(() => {
     pulse.remove();
   }, pulseDuration); 
@@ -67,4 +67,14 @@ function randomPulse() {
   setInterval(createPulse, (2*1000)); // Every 2 seconds
 }
 
-randomPulse();
+// Create pulses immediately when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+  createPulse();
+  // Optionally, create multiple pulses
+  for (let i = 0; i < 5; i++) {
+    setTimeout(createPulse, i * 1000); // Create a pulse every second for 5 seconds
+  }
+
+  // Continue creating pulses at regular intervals
+ randomPulse();
+});

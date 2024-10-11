@@ -1,44 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"></html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="""UTF-8">
+  <meta name="""viewport" content="width=device-width, initial-scale=1.0">
   <title>Seamus Hinz</title>
   <link rel="icon" type="image/x-con" href="Assets/Self Portrait.jpg">
   <link rel="stylesheet" href="Styles/styles.css">
   <link rel="stylesheet" href="Styles/backgroundPulseStyle.css">
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
 </head>
 
 <div id="pulse-container"></div>
-
-  <body>
-  <!--
-  <nav>
-    <section class="topnav">
-      <div class="left-items">
-        <h1>Seamus Hinz</h1>
-      </div>
-      dont need really
-      <div class="right-items">
-        <ul>
-          <li><a href="Home.html">Home</a></li>
-          <li><a href="Previous Work.html">Previous Work</a></li>
-          <li><a href="LinksAndMore.html">Links and More</a></li>
-        </ul>
-      </div>
-    </section>
-  </nav>
-  -->
+<body>
   <div class="stacked-text">
-  <header>
-      <h1>Seamus Hinz</h1>
-      <h2>This Site is Under Construction.</h2>
-  </header>
-  <main>
-      <!--<p>I love resume sites!</p> -->
-  </main>
+    <header>
+        <h1>Seamus Hinz</h1>
+    </header>
+    <main>
+      <h2>About Me</h2>
+        <p>Hello, my name is Seamus Hinz. I'm a student at the University of Florida studying Computer Science.</p>
+      <h2>Experience</h2>
+        <p>stuff about C++ python, html whatever</p>
+        <h2>Experience</h2>
+        <p>stuff about C++ python, html whatever</p>
+        <h2>Experience</h2>
+        <p>stuff about C++ python, html whatever</p>
+        <h2>Experience</h2>
+        <p>stuff about C++ python, html whatever</p>
+        <h2>Experience</h2>
+        <p>stuff about C++ python, html whatever</p>
+        <h2>Experience</h2>
+        <p>stuff about C++ python, html whatever</p>
+        <h2>Experience</h2>
+        <p>stuff about C++ python, html whatever</p>
+        <h2>Experience</h2>
+        <p>stuff about C++ python, html whatever</p>
+        <h2>Experience</h2>
+        <p>stuff about C++ python, html whatever</p>        <h2>Experience</h2>
+        <p>stuff about C++ python, html whatever</p>        <h2>Experience</h2>
+        <p>stuff about C++ python, html whatever</p>        <h2>Experience</h2>
+        <p>stuff about C++ python, html whatever</p>        <h2>Experience</h2>
+        <p>stuff about C++ python, html whatever</p>        <h2>Experience</h2>
+        <p>stuff about C++ python, html whatever</p>        <h2>Experience</h2>
+        <p>stuff about C++ python, html whatever</p>        <h2>Experience</h2>
+        <p>stuff about C++ python, html whatever</p>        <h2>Experience</h2>
+        <p>stuff about C++ python, html whatever</p>        <h2>Experience</h2>
+        <p>stuff about C++ python, html whatever</p>        <h2>Experience</h2>
+        <p>stuff about C++ python, html whatever</p>        <h2>Experience</h2>
+        <p>stuff about C++ python, html whatever</p>        <h2>Experience</h2>
+        <p>stuff about C++ python, html whatever</p>
+      <h2>Projects</h2>
+        <p>stuff about projects</p>
+      <h2>Links</h2>
+        <p>stuff about links</p>
+        <model-viewer id="seamus-model" src="Assets/Seamus v_0.glb" alt="A 3D of myself, Seamus Hinz. It rotates as you scroll down the page, revealing the peak of the human condition."tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
+          <div class="progress-bar hide" slot="progress-bar">
+            <div class="update-bar"></div>
+        </div>
+        </model-viewer>
+    </main>
   </div>
   <script src="script.js"></script>
-  </body>
+  <script>
+    document.addEventListener('scroll', () => {
+      const modelViewer = document.getElementById('seamus-model');
+      const scrollPosition = window.scrollY;
+      const rotation = scrollPosition * 0.50; // Adjust the multiplier as needed
+      modelViewer.setAttribute('camera-orbit', `calc(env(window-scroll-y) * 360deg) 75deg 105%m`);
+    });
+  </script>
+</body>
 
 </html>
