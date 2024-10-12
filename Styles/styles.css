@@ -3,17 +3,10 @@
     --secondary-color: #7c7c7c44;
     --background-color: rgb(252, 249, 246);
     --dark-background-color: #1b0505;
-    --text-color: #1C1C1C;
-    color : var(--text-color);
+    --text-color-LM: #1C1C1C;
+    --text-color-DM: var(--background-color);
+    color : var(--text-color-LM);
     background-color: var(--background-color);
-}
-
-.index
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 h1 {
@@ -32,35 +25,97 @@ h2 {
     src: url('../assets/Projekt\ Blackbird.otf') format('opentype');
   }
 
+html {
+    scroll-behavior: smooth;
+  }
 body,html {
     font-family: Blackbird , Helvetica, Arial;
-    margin: 20px;
 }
 
-main {
-    width: clamp(300px, 80%, 1000px);
-    margin: 32px;
-}
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+  }
 
 p {
-    font-size: clamp(12px, 3vw, 20px);
+    font-size: clamp(5px, 3vw, 25px);
 }
 
-.stacked-text {
+/* Sidenav styles */
+.sidebar {
     display: flex;
     flex-direction: column;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
     justify-content: center;
-    align-items: center;
-    text-align: center;
+    
+  }  
+/*shamelessely stolen from w3schools*/
+/* Sidebar links */
+.sidebar a {
+    font-size: clamp(5px, 3vw, 25px);
+    display: flex;
+    padding: 16px;
+    text-decoration: none;
+    color : inherit;
 }
 
-.centered-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  background: var(--secondary-color);
+}
+  
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+/* mobile mode */
+@media screen and (max-width: 700px) {
+    h1 {
+        text-align: center;
+        margin-top: 100px;
+    }
+    h2 {
+        text-align: center;
+    }
+    p {
+        text-align: center;
+    }
+    .sidebar {
+        align-self: center;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        /*shamemelessly stolen from clueless Expert*/
+        background:linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255,255,255,0));
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.26);
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+        margin: 16px;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+    #seamus-model {
+        display: none;
+    }
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+    .sidebar{
+        position: fixed;
+        right: 0;
+        left: auto;
+    }
+    .sidebar a {
+        text-align: center;
+        float: none;
+        flex-direction: row;
+    }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -74,8 +129,8 @@ p {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 20vw;
-    height: 60vw;
+    width: 200px;
+    height: 30vh;
     max-width: 400px;
     max-height: 400px;
     z-index: 1000; /* force to top */
@@ -87,7 +142,7 @@ p {
     from
     {
         opacity: 0;
-        transform: scale(0.5) translateY(-10px);
+        transform: scale(0.9) translateY(20px);
     }
 
     to {
