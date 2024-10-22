@@ -12,12 +12,14 @@
 
 <div id="pulse-container"></div>
 
-<nav class="sidebar">
-  <a href="#about-me">Abouasdfast Me</a>
-  <a href="#experience">Experience</a>
-  <a href="#projects">Projects</a>
-  <a href="#links">Links</a>
-</nav>
+<div class="horizontal-center">
+  <nav class="sidebar">
+    <a href="#about-me">About Me</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#links">Links</a>
+  </nav>
+</div>
 
 <body>
   <div class="content">
@@ -64,7 +66,7 @@
       <section id="links">
         <h2>Links</h2>
         <p>stuff about links</p>
-      <model-viewer id="seamus-model" src="Assets/Seamus v_0.glb" alt="A 3D of myself, Seamus Hinz. It rotates as you scroll down the page, revealing the peak of the human condition."tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
+      <model-viewer id="seamus-model" src="Assets/Seamus v_0.glb" alt="A 3D of myself, Seamus Hinz. It rotates as you scroll down the page, revealing the peak of the human condition."tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" interpolation-decay = "20">
         <div class="progress-bar hide" slot="progress-bar">
           <div class="update-bar"></div>
         </model-viewer>
