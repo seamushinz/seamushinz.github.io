@@ -1,5 +1,4 @@
 // Define a color palette (use any colors you like)
-
 const lightModePalette = [
   'rgba(255, 99, 132, 0.5)',
   'rgba(54, 162, 235, 0.5)',
