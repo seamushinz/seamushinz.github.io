@@ -15,22 +15,25 @@ h1 {
     font-size: clamp(25px, 10vw, 100px);
     font-weight: bolder;
 }
-
+a {
+    text-decoration: none; /* Removes underline */
+    color: inherit;        /* Inherits text color from parent */
+}
 h2 {
-    font-family: Blackbird, Helvetica, Arial;
+    font-family: Blackbird, Helvetica, Arial, serif;
     font-size: clamp(15px, 5vw, 60px);
 }
 
 @font-face {
     font-family: 'Blackbird';
-    src: url('../assets/Projekt\ Blackbird.otf') format('opentype');
+    src: url('Assets/Projekt Blackbird.otf') format('opentype');
   }
 
 html {
     scroll-behavior: smooth;
   }
 body,html {
-    font-family: Blackbird , Helvetica, Arial;
+    font-family: Blackbird, Helvetica, Arial, serif;
 }
 
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
@@ -42,9 +45,8 @@ body,html {
   }
 
 p {
-    font-size: clamp(5px, 3vw, 25px);
+    font-size: clamp(18px, 3vw, 25px);
 }
-
 
 /* Sidenav styles */
 .sidebar {
@@ -66,11 +68,13 @@ p {
     padding: 16px;
     text-decoration: none;
     color : inherit;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 /* Links on mouse-over */
 .sidebar a:hover:not(.active) {
   background: var(--secondary-color);
+    transform: scale(95%);
 }
   
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
@@ -115,20 +119,6 @@ p {
     }
 }
 
-/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-@media screen and (max-width: 400px) {
-    .sidebar{
-        position: fixed;
-        right: 0;
-        left: auto;
-    }
-    .sidebar a {
-        text-align: center;
-        float: none;
-        flex-direction: row;
-    }
-}
-
 @media (prefers-color-scheme: dark) {
     :root{
         background-color: var(--dark-background-color); /* Dark background for dark mode */
@@ -159,4 +149,20 @@ p {
     to {
         opacity: 1;
     }
+}
+
+#about-me img {
+    max-width: 5cap;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    max-width: 200px; /* Adjust size as needed */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px; /* Slightly rounded corners */
+    border: none; /* Remove border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a modern look */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for transform and shadow */
+    z-index: 50; /* Force the image to the top */
 }
