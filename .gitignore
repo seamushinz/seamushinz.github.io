@@ -1,4 +1,7 @@
 /.DS_Store
-.idea/vcs.xml
-.idea/modules.xml
-.idea/Personal Site.iml
+.idea/
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
