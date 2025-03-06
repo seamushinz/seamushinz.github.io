@@ -8,7 +8,24 @@
     color : var(--text-color-LM);
     background-color: var(--background-color);
     --sidebar-width : 160px;
-}  
+}
+
+@media (prefers-color-scheme: dark) {
+    :root{
+        background-color: var(--dark-background-color); /* Dark background for dark mode */
+        color: var(--background-color); /* Light text for dark mode */
+    }
+    .github-icon {
+        content: url('https://img.icons8.com/ios11/512/FFFFFF/github.png');
+    }
+}
+
+.github-icon {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 4px;
+}
 
 h1 {
     font-family: Blackbird, Helvetica, Arial;
@@ -22,6 +39,11 @@ a {
 h2 {
     font-family: Blackbird, Helvetica, Arial, serif;
     font-size: clamp(15px, 5vw, 60px);
+}
+
+h3 {
+    font-family: Blackbird, Helvetica, Arial, serif;
+    font-size: clamp(10px, 3vw, 40px);
 }
 
 @font-face {
@@ -84,7 +106,7 @@ p {
         text-align: center;
         margin-top: 75px;
     }
-    h2 {
+    h2, h3 {
         text-align: center;
     }
     p {
@@ -116,13 +138,6 @@ p {
     }
     #seamus-model {
         display: none;
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    :root{
-        background-color: var(--dark-background-color); /* Dark background for dark mode */
-        color: var(--background-color); /* Light text for dark mode */
     }
 }
 
