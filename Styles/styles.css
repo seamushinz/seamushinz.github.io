@@ -28,7 +28,7 @@
 }
 
 h1 {
-    font-family: Blackbird, Helvetica, Arial;
+    font-family: Blackbird, Helvetica, Arial, sans-serif;
     font-size: clamp(25px, 10vw, 100px);
     font-weight: bolder;
 }
@@ -36,6 +36,16 @@ a {
     text-decoration: none; /* Removes underline */
     color: inherit;        /* Inherits text color from parent */
 }
+
+/* cool hover for links*/
+.links{
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+.links:hover{
+    color: var(--primary-color);
+    text-shadow: 0 0 10px var(--primary-color);
+}
+
 h2 {
     font-family: Blackbird, Helvetica, Arial, serif;
     font-size: clamp(15px, 5vw, 60px);
