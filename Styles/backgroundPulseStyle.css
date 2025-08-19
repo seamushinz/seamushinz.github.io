@@ -11,7 +11,8 @@
   height: 100%;
   top: 0;
   left: 0;
-  pointer-events: none; /* Ensure the container doesn't interfere with other interactions */
+  z-index: 0;
+  pointer-events: none;
 }
 
 .pulse {
@@ -22,7 +23,7 @@
   background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
   animation: pulse var(--pulse-duration) infinite ease-in-out; /* Using variable for duration */
   pointer-events: none;
-  opacity: 0.5;
+  opacity: 0.25;
   z-index: 0;
 }
 
@@ -32,7 +33,7 @@
       opacity: 0;
   }
   65% {
-      opacity: 0.5;
+      opacity: 0.25;
   }
   100% {
       transform: scale(var(--pulse-scale)); /* Using variable for scale */
@@ -51,7 +52,7 @@
           opacity: 0;
       }
       65% {
-          opacity: 0.25;
+          opacity: 0.2;
       }
       100% {
           transform: scale(var(--pulse-scale)); /* Using variable for scale */
