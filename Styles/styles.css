@@ -4,27 +4,26 @@
     --background-color: rgb(252, 249, 246);
     --dark-background-color: #1b0505;
     --text-color-LM: #1C1C1C;
-    --text-color-DM: var(--background-color);
+    --text-color-DM: #d5d3d0;
     color : var(--text-color-LM);
     background-color: var(--background-color);
     --sidebar-width : 160px;
+    z-index: 20;
 }
-
 
 @media (prefers-color-scheme: dark) {
     :root{
         background-color: var(--dark-background-color); /* Dark background for dark mode */
-        color: var(--background-color); /* Light text for dark mode */
+        color: var(--text-color-DM); /* Light text for dark mode */
     }
     .github-icon {
         content: url('https://img.icons8.com/ios11/512/FFFFFF/github.png');
     }
     mark {
-        color : var(--background-color);
+        color : var(--text-color-DM);
         background-color: rgba(255, 231, 181, 0.25);
     }
 }
-
 mark {
     background-color: rgba(250, 188, 42, 0.5);
     padding: 0.05em 0.1em;
@@ -32,38 +31,39 @@ mark {
 }
 
 .github-icon {
-    width: 24px;
-    height: 24px;
+    width: 25px;
+    padding-bottom: 5px;
+    display: inline-block;
     vertical-align: middle;
     margin-right: 4px;
 }
 
 h1 {
-    font-family: Blackbird, Helvetica, Arial, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
     font-size: clamp(25px, 10vw, 70px);
     font-weight: bolder;
 }
 a {
-    text-decoration: none; /* Removes underline */
-    color: inherit;        /* Inherits text color from parent */
+    text-decoration: none;
+    color: inherit;
 }
 
 /* cool hover for links*/
-.links{
+.links, .gitLink{
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
-.links:hover{
+.links:hover, .gitLink:hover {
     color: var(--primary-color);
     text-shadow: 0 0 10px var(--primary-color);
 }
 
 h2 {
-    font-family: Blackbird, Helvetica, Arial, serif;
+    font-family: Helvetica, Arial, serif;
     font-size: clamp(30px, 5vw, 50px);
 }
 
 h3 {
-    font-family: Blackbird, Helvetica, Arial, serif;
+    font-family: Helvetica, Arial, serif;
     font-size: clamp(20px, 3vw, 40px);
 }
 
@@ -76,7 +76,7 @@ html {
     scroll-behavior: smooth;
   }
 body,html {
-    font-family: Blackbird, Helvetica, Arial, serif;
+    font-family: Helvetica, Arial, serif;
 }
 
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
@@ -90,6 +90,11 @@ body,html {
 
 p {
     font-size: clamp(15px, 3vw, 25px);
+    margin-left: 1.25em;
+}
+
+.gitLink {
+    margin-left: 0;
 }
 
 /* Sidenav styles */
@@ -104,7 +109,7 @@ p {
     justify-content: center;
 
   }
-/*shamelessely stolen from w3schools*/
+/*Referenced from w3schools*/
 /* Sidebar links */
 .sidebar a {
     font-size: clamp(5px, 3vw, 25px);
@@ -112,12 +117,13 @@ p {
     padding: 16px;
     text-decoration: none;
     color : inherit;
-    transition: background 0.3s ease, transform 0.3s ease;
+    transition: background 0.1s ease, transform 0.1s ease;
+    border-radius: 4px;
 }
 
 /* Links on mouse-over */
 .sidebar a:hover:not(.active) {
-  background: var(--secondary-color);
+    background: var(--secondary-color);
     transform: scale(95%);
 }
 
@@ -133,6 +139,7 @@ p {
     }
     p {
         text-align: center;
+        margin-left: 0; /* Remove indentation on mobile for better centering */
     }
     .sidebar {
         display: flex;
@@ -182,7 +189,6 @@ p {
         opacity: 0;
         transform: scale(0.9) translateY(20px);
     }
-
     to {
         opacity: 1;
     }
